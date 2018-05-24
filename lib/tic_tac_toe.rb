@@ -22,7 +22,8 @@ def position_taken?(board,position)
   end
 end
 
-def valid_move?(board,position)
+def valid_move?(board,pos)
+  position=input_to_index(pos)
   if(position_taken?(board,position))
     return false
   else
@@ -50,12 +51,10 @@ end
 def turn(board)
 puts "Please enter 1-9:"
 inp=gets.strip
-ind=input_to_index(inp)
-if (valid_move?(board,ind)==true)
+if (valid_move?(board,inp)==true)
   turn(board)
 end
 move(board,ind,current_player(board))
-
 display_board(board)
 end
 
