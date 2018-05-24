@@ -52,7 +52,7 @@ def turn(board)
 puts "Please enter 1-9:"
 inp=gets.strip
 if (valid_move?(board,inp)==true)
-  turn(board)
+  #turn(board)
 end
 move(board,ind,current_player(board))
 display_board(board)
